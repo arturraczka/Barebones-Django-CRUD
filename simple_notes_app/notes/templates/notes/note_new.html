@@ -1,7 +1,9 @@
 {% extends 'notes/base.html' %}
 
 {% block content %}
-
+    <form action='{% url "note_list"%}'>
+        <input type="submit" value="Back" />
+    </form>
     <h2>Create new Note</h2>
     <form method="post">
         {% csrf_token %}
