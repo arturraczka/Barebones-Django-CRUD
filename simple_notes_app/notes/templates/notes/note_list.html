@@ -1,0 +1,15 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+    <h1>List of Notes</h1>
+    <form action='{% url "note_new" %}'>
+        <input type="submit" value="Add new Note" />
+    </form>
+    {% for note in notes %}
+        <h2><a href='{% url "note_detail" note.pk %}'>{{ note.title }}</a></h2>
+        <p>{{ note.body }}<br>
+        {{ note.created }}</p>
+    {% endfor %}
+{% endblock content %}
+
+
